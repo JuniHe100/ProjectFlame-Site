@@ -1,0 +1,122 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Project Flame</title>  
+  
+    <style>  
+        * {  
+            box-sizing: border-box;  
+        }  
+  
+        body {  
+            margin: 0;  
+            font-family: Arial, sans-serif;  
+            background: #0b0b0b;  
+            color: white;  
+            text-align: center;  
+        }  
+  
+        header {  
+            padding: 60px 20px;  
+            background: linear-gradient(180deg, #ff5a00, #160800);  
+        }  
+  
+        h1 {  
+            font-size: 48px;  
+            margin: 0;  
+        }  
+  
+        .subtitle {  
+            font-size: 18px;  
+            opacity: 0.8;  
+        }  
+  
+        section {  
+            padding: 40px 20px;  
+        }  
+  
+        .card {  
+            max-width: 500px;  
+            margin: auto;  
+            padding: 25px;  
+            border-radius: 20px;  
+            background: #171717;  
+        }  
+  
+        button {  
+            border: 0;  
+            padding: 15px 25px;  
+            border-radius: 12px;  
+            font-size: 17px;  
+            font-weight: bold;  
+            cursor: pointer;  
+            background: #ff5a00;  
+            color: white;  
+        }  
+  
+        button:active {  
+            transform: scale(0.96);  
+        }  
+  
+        #claim {  
+            display: none;  
+            margin-top: 20px;  
+            font-size: 20px;  
+        }  
+  
+        footer {  
+            padding: 30px;  
+            opacity: 0.5;  
+        }  
+    </style>  
+</head>  
+  
+<body>  
+  
+<header>  
+    <h1>🔥 PROJECT FLAME</h1>  
+    <p class="subtitle">Welcome to the official Project Flame website.</p>  
+</header>  
+  
+<section>  
+    <div class="card">  
+        <h2>🎁 FREE FLAME PLUSH</h2>  
+  
+        <p>  
+            Visit the official Project Flame website  
+            and claim your free in-game plush!  
+        </p>  
+  
+        <button onclick="claimPlush()">  
+            CLAIM PLUSH  
+        </button>  
+  
+        <div id="claim">  
+            🔥 Your claim code:<br><br>  
+            <strong>FLAMEPLUSH</strong>  
+            <br><br>  
+            Enter this code in Project Flame!  
+        </div>  
+    </div>  
+</section>  
+  
+<section>  
+    <h2>🎮 PROJECT FLAME</h2>  
+    <p>  
+        More updates, cosmetics, and features coming soon.  
+    </p>  
+</section>  
+  
+<footer>  
+    Project Flame © 2026  
+</footer>  
+  
+<script>  
+function claimPlush() {  
+    document.getElementById("claim").style.display = "block";  
+}  
+</script>  
+  
+</body>  
+</html>  
