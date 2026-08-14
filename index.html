@@ -1,122 +1,1142 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Project Flame</title>  
-  
-    <style>  
-        * {  
-            box-sizing: border-box;  
-        }  
-  
-        body {  
-            margin: 0;  
-            font-family: Arial, sans-serif;  
-            background: #0b0b0b;  
-            color: white;  
-            text-align: center;  
-        }  
-  
-        header {  
-            padding: 60px 20px;  
-            background: linear-gradient(180deg, #ff5a00, #160800);  
-        }  
-  
-        h1 {  
-            font-size: 48px;  
-            margin: 0;  
-        }  
-  
-        .subtitle {  
-            font-size: 18px;  
-            opacity: 0.8;  
-        }  
-  
-        section {  
-            padding: 40px 20px;  
-        }  
-  
-        .card {  
-            max-width: 500px;  
-            margin: auto;  
-            padding: 25px;  
-            border-radius: 20px;  
-            background: #171717;  
-        }  
-  
-        button {  
-            border: 0;  
-            padding: 15px 25px;  
-            border-radius: 12px;  
-            font-size: 17px;  
-            font-weight: bold;  
-            cursor: pointer;  
-            background: #ff5a00;  
-            color: white;  
-        }  
-  
-        button:active {  
-            transform: scale(0.96);  
-        }  
-  
-        #claim {  
-            display: none;  
-            margin-top: 20px;  
-            font-size: 20px;  
-        }  
-  
-        footer {  
-            padding: 30px;  
-            opacity: 0.5;  
-        }  
-    </style>  
-</head>  
-  
-<body>  
-  
-<header>  
-    <h1>🔥 PROJECT FLAME</h1>  
-    <p class="subtitle">Welcome to the official Project Flame website.</p>  
-</header>  
-  
-<section>  
-    <div class="card">  
-        <h2>🎁 FREE FLAME PLUSH</h2>  
-  
-        <p>  
-            Visit the official Project Flame website  
-            and claim your free in-game plush!  
-        </p>  
-  
-        <button onclick="claimPlush()">  
-            CLAIM PLUSH  
-        </button>  
-  
-        <div id="claim">  
-            🔥 Your claim code:<br><br>  
-            <strong>FLAMEPLUSH</strong>  
-            <br><br>  
-            Enter this code in Project Flame!  
-        </div>  
-    </div>  
-</section>  
-  
-<section>  
-    <h2>🎮 PROJECT FLAME</h2>  
-    <p>  
-        More updates, cosmetics, and features coming soon.  
-    </p>  
-</section>  
-  
-<footer>  
-    Project Flame © 2026  
-</footer>  
-  
-<script>  
-function claimPlush() {  
-    document.getElementById("claim").style.display = "block";  
-}  
-</script>  
-  
-</body>  
-</html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+
+<title>Project Flame</title>
+
+<style>
+:root {
+    --bg: #070707;
+    --bg2: #0d0d0d;
+    --card: #121212;
+    --card2: #181818;
+    --line: rgba(255,255,255,.09);
+    --text: #fff;
+    --muted: #a5a5a5;
+    --orange: #ff5a00;
+    --orange2: #ff9a3d;
+    --green: #54e878;
+    --red: #ff4657;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 50% -20%, #542000 0%, transparent 40%),
+        radial-gradient(circle at 90% 40%, #241000 0%, transparent 30%),
+        var(--bg);
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+    background: rgba(7,7,7,.78);
+    backdrop-filter: blur(20px);
+}
+
+.nav-inner {
+    max-width: 1250px;
+    margin: auto;
+    min-height: 72px;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 950;
+    letter-spacing: .5px;
+    white-space: nowrap;
+}
+
+.logo-fire {
+    filter: drop-shadow(0 0 14px rgba(255,90,0,.5));
+}
+
+.nav-links {
+    display: flex;
+    gap: 6px;
+}
+
+.nav-links a,
+.nav-account {
+    padding: 10px 13px;
+    border-radius: 10px;
+    color: #bbb;
+    transition: .15s;
+}
+
+.nav-links a:hover,
+.nav-account:hover {
+    background: rgba(255,255,255,.06);
+    color: white;
+}
+
+.nav-spacer {
+    flex: 1;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    border: 0;
+    border-radius: 13px;
+    padding: 13px 18px;
+    font-weight: 850;
+    font-size: 14px;
+    transition: transform .15s, box-shadow .15s, opacity .15s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.primary {
+    color: white;
+    background: linear-gradient(135deg, var(--orange), #ff7d1c);
+    box-shadow: 0 12px 35px rgba(255,90,0,.25);
+}
+
+.secondary {
+    color: white;
+    background: rgba(255,255,255,.07);
+    border: 1px solid var(--line);
+}
+
+.discord {
+    background: #5865f2;
+    color: white;
+    box-shadow: 0 12px 30px rgba(88,101,242,.2);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+    max-width: 1250px;
+    margin: auto;
+
+    padding: 100px 24px 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "🔥";
+    position: absolute;
+    font-size: 420px;
+    opacity: .025;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-flex;
+    padding: 8px 13px;
+    border-radius: 999px;
+
+    background: rgba(255,90,0,.08);
+    border: 1px solid rgba(255,120,40,.25);
+
+    color: #ffb477;
+    font-weight: 800;
+    font-size: 13px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-size: clamp(58px, 11vw, 125px);
+    line-height: .82;
+    letter-spacing: -7px;
+    font-weight: 1000;
+
+    text-shadow:
+        0 0 50px rgba(255,90,0,.18);
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        135deg,
+        white,
+        #ff9b4d,
+        #ff4c00
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 30px auto;
+
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 80px 24px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    margin: 0 0 8px;
+    font-size: 40px;
+    letter-spacing: -1px;
+}
+
+.section-title p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.018)
+        );
+
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 28px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,.25);
+}
+
+.card-icon {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+.card p {
+    margin: 0;
+    color: #999;
+    line-height: 1.6;
+}
+
+/* =========================
+   DOWNLOAD
+========================= */
+
+.download-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.download-card h2 {
+    margin: 0 0 10px;
+    font-size: 34px;
+}
+
+.download-card p {
+    margin: 0;
+    color: #999;
+}
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 18px;
+    background: linear-gradient(135deg,#ff5a00,#ff9a3d);
+
+    font-size: 28px;
+}
+
+.account-info {
+    flex: 1;
+}
+
+.account-info h3 {
+    margin: 0 0 5px;
+}
+
+.account-info p {
+    margin: 0;
+    color: #888;
+}
+
+/* =========================
+   MODALS
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 500;
+
+    display: none;
+    place-items: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.82);
+    backdrop-filter: blur(12px);
+}
+
+.modal.open {
+    display: grid;
+}
+
+.modal-box {
+    width: min(520px,100%);
+
+    padding: 28px;
+
+    background: #111;
+    border: 1px solid #303030;
+    border-radius: 25px;
+
+    box-shadow: 0 40px 120px #000;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.close {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid var(--line);
+    border-radius: 11px;
+
+    color: white;
+    background: rgba(255,255,255,.05);
+
+    font-size: 20px;
+}
+
+.google-button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px;
+
+    border: 1px solid #444;
+    border-radius: 13px;
+
+    background: white;
+    color: #111;
+
+    font-weight: 800;
+}
+
+.google-icon {
+    font-size: 18px;
+}
+
+.login-note {
+    margin-top: 15px;
+
+    color: #777;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =========================
+   FLAME ERROR
+========================= */
+
+.fire-error {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999;
+
+    display: none;
+    place-items: center;
+
+    background:
+        radial-gradient(circle,#260b00,#050505 60%);
+}
+
+.fire-error.show {
+    display: grid;
+}
+
+.fire-box {
+    width: min(600px,90%);
+
+    text-align: center;
+}
+
+.fire-icon {
+    font-size: 90px;
+
+    filter:
+        drop-shadow(0 0 30px rgba(255,70,0,.7));
+
+    animation: firePulse 1.2s infinite alternate;
+}
+
+.fire-box h1 {
+    margin: 20px 0 10px;
+
+    font-size: clamp(35px,7vw,65px);
+}
+
+.fire-box p {
+    color: #999;
+}
+
+.error-code {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    background: #1c0909;
+    border: 1px solid #5d2020;
+
+    color: #ff6570;
+
+    font-family: monospace;
+}
+
+.redirect {
+    margin-top: 22px;
+    color: #777;
+}
+
+@keyframes firePulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 45px 24px;
+
+    border-top: 1px solid var(--line);
+
+    text-align: center;
+    color: #666;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+    .nav-inner {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+        padding-top: 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 17px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .download-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .download-card .btn {
+        width: 100%;
+    }
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media(min-width:1500px) {
+
+    .nav-inner,
+    .hero,
+    .section {
+        max-width: 1450px;
+    }
+
+    .hero {
+        min-height: 800px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+    <div class="nav-inner">
+
+        <a href="#" class="logo">
+            <span class="logo-fire">🔥</span>
+            PROJECT FLAME
+        </a>
+
+        <div class="nav-links">
+            <a href="#game">Game</a>
+            <a href="#updates">Updates</a>
+            <a href="#download">Download</a>
+            <a href="#community">Community</a>
+        </div>
+
+        <div class="nav-spacer"></div>
+
+        <a
+            class="nav-account"
+            href="javascript:void(0)"
+            onclick="openLogin()"
+        >
+            Sign in
+        </a>
+
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🔥 THE OFFICIAL PROJECT FLAME WEBSITE
+        </div>
+
+        <h1>
+            PROJECT<br>
+            <span>FLAME</span>
+        </h1>
+
+        <p>
+            Welcome to Project Flame.
+            Get the latest game build, follow updates,
+            join the community, and manage your Flame account.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                class="btn primary"
+                href="https://flamegtfr.itch.io/project-flame-revamped#google_vignette"
+                target="_blank"
+                rel="noopener"
+            >
+                🎮 DOWNLOAD FLAME
+            </a>
+
+            <a
+                class="btn discord"
+                href="https://discord.gg/7aVWRwnPyD"
+                target="_blank"
+                rel="noopener"
+            >
+                💬 JOIN DISCORD
+            </a>
+
+            <button
+                class="btn secondary"
+                onclick="openLogin()"
+            >
+                🔐 SIGN IN
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     GAME
+========================= -->
+
+<section class="section" id="game">
+
+    <div class="section-title">
+        <h2>The Game 🔥</h2>
+
+        <p>
+            Everything Project Flame in one place.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="card-icon">🎮</div>
+
+            <h3>Play Flame</h3>
+
+            <p>
+                Download the latest available build
+                and jump into Project Flame.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">🔥</div>
+
+            <h3>Flame Updates</h3>
+
+            <p>
+                New features, improvements,
+                events, and changes will be posted here.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">👥</div>
+
+            <h3>Community</h3>
+
+            <p>
+                Meet other Project Flame players
+                through the official Discord.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     UPDATES
+========================= -->
+
+<section class="section" id="updates">
+
+    <div class="section-title">
+
+        <h2>Latest Updates 📢</h2>
+
+        <p>
+            What's happening with Project Flame.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>🔥 Project Flame Website Update</h3>
+
+        <p>
+            The Flame website has received a massive redesign
+            with a new account system interface, community links,
+            downloads, responsive desktop/mobile design,
+            and the secure Flame connection system.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DOWNLOAD
+========================= -->
+
+<section class="section" id="download">
+
+    <div class="card download-card">
+
+        <div>
+
+            <h2>Download Project Flame</h2>
+
+            <p>
+                Get the latest available build from itch.io.
+            </p>
+
+        </div>
+
+        <a
+            class="btn primary"
+            href="https://flamegtfr.itch.io/project-flame-revamped#google_vignette"
+            target="_blank"
+            rel="noopener"
+        >
+            DOWNLOAD
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNITY
+========================= -->
+
+<section class="section" id="community">
+
+    <div class="section-title">
+
+        <h2>Join the Community 💬</h2>
+
+        <p>
+            Talk with the Project Flame community.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Project Flame Discord</h3>
+
+        <p style="margin-bottom:20px">
+
+            Join the Discord for announcements,
+            community discussions, and game news.
+
+        </p>
+
+        <a
+            class="btn discord"
+            href="https://discord.gg/7aVWRwnPyD"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 JOIN DISCORD
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    🔥 Project Flame
+
+    <br><br>
+
+    Community website • PC • Mobile
+
+</footer>
+
+
+<!-- =========================
+     LOGIN MODAL
+========================= -->
+
+<div class="modal" id="loginModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>Sign in to Flame</h2>
+
+            <button
+                class="close"
+                onclick="closeLogin()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <button
+            class="google-button"
+            onclick="startGoogleLogin()"
+        >
+
+            <span class="google-icon">G</span>
+
+            Continue with Google
+
+        </button>
+
+        <div class="login-note">
+
+            Your Google account will be securely authenticated
+            by the Project Flame backend.
+
+            <br><br>
+
+            We never ask for or store your Google password.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FIRE ERROR
+========================= -->
+
+<div class="fire-error" id="fireError">
+
+    <div class="fire-box">
+
+        <div class="fire-icon">
+            🔥
+        </div>
+
+        <h1>
+            FLAME CONNECTION ERROR
+        </h1>
+
+        <p>
+            We couldn't connect you to Project Flame.
+        </p>
+
+        <div class="error-code">
+            ERROR CODE: FIRE
+        </div>
+
+        <div class="redirect">
+            Redirecting to the main page...
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/*
+=========================================================
+PROJECT FLAME FRONTEND
+=========================================================
+
+IMPORTANT:
+
+This file intentionally does NOT contain:
+
+• Admin passwords
+• Google client secrets
+• PlayFab secrets
+• Admin authorization logic
+
+Those belong in the secure Cloudflare Worker.
+
+=========================================================
+*/
+
+
+/* =========================
+   LOGIN UI
+========================= */
+
+function openLogin() {
+
+    document
+        .getElementById("loginModal")
+        .classList
+        .add("open");
+
+}
+
+function closeLogin() {
+
+    document
+        .getElementById("loginModal")
+        .classList
+        .remove("open");
+
+}
+
+
+/* =========================
+   GOOGLE LOGIN
+========================= */
+
+function startGoogleLogin() {
+
+    /*
+    The secure version will redirect to:
+
+        /auth/google
+
+    The Cloudflare Worker handles:
+
+        Google OAuth
+        ↓
+        Identity verification
+        ↓
+        Session creation
+        ↓
+        Role lookup
+    */
+
+    const backendAvailable = false;
+
+    if (!backendAvailable) {
+
+        showFireError();
+
+        return;
+
+    }
+
+    window.location.href = "/auth/google";
+
+}
+
+
+/* =========================
+   FLAME CONNECTION
+========================= */
+
+async function checkFlameConnection() {
+
+    try {
+
+        /*
+        Once the Cloudflare Worker is connected,
+        this will become:
+
+            fetch("/api/session")
+
+        The Worker will return:
+
+            200 = connected
+
+            401 = not authenticated
+
+            503 = Flame unavailable
+        */
+
+        const response =
+            await fetch("/api/session", {
+                credentials: "include"
+            });
+
+        if (!response.ok) {
+
+            showFireError();
+
+            return false;
+
+        }
+
+        return true;
+
+    }
+
+    catch (error) {
+
+        showFireError();
+
+        return false;
+
+    }
+
+}
+
+
+/* =========================
+   FIRE ERROR
+========================= */
+
+function showFireError() {
+
+    const error =
+        document.getElementById("fireError");
+
+    error.classList.add("show");
+
+    setTimeout(() => {
+
+        window.location.href = "/";
+
+    }, 4000);
+
+}
+
+
+/* =========================
+   SESSION CHECK
+========================= */
+
+/*
+Do NOT enable this yet unless the Cloudflare
+Worker API has been deployed.
+
+When the backend is ready, uncomment:
+
+checkFlameConnection();
+
+*/
+
+
+</script>
+
+</body>
+</html>
